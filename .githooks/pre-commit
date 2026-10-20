@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+echo"Vérification avant commit..." 
+if command -v cmd.exe >/dev/null2>&1; then
+cmd.exe //c HexGL\\formation\\tests\\ci-chrome.bat || exit 1
+else
+bashHexGL/formation/tests/ci-chrome.sh || exit 1
+fi
+echo"OK"
