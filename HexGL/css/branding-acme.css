@@ -1,0 +1,66 @@
+/* ACME event branding — single configuration point (edit values below to rebrand) */
+:root {
+  --acme-bg: #08090D;
+  --acme-accent-violet: #7628FF;
+  --acme-accent-blue: #315BFF;
+  --acme-accent-cyan: #00C4E8;
+  --acme-text: #FFFFFF;
+  --acme-text-muted: #E6E8EE;
+  --acme-logo: url('../formation/identite/logo.png');
+}
+
+/* Étape 2 : palette ACME — fond sombre + accents violet/bleu/cyan de la charte. */
+#global {
+  background-color: var(--acme-bg);
+}
+
+#menu {
+  color: var(--acme-accent-cyan);
+}
+
+#menu div:hover {
+  color: var(--acme-accent-blue);
+}
+
+#start {
+  color: var(--acme-accent-violet);
+}
+
+#start:hover {
+  color: var(--acme-accent-blue);
+}
+
+/* Étape 3 : logo ACME — remplace uniquement l'image, le positionnement/sizing
+   (no-repeat center top, background-size: auto 50%) de css/multi.css est conservé. */
+#title {
+  background-image: var(--acme-logo);
+  text-align: center;
+}
+
+/* Étape 4 : message d'accueil — positionné sous le logo (occupant les ~50% hauts
+   de #title), sans empiéter sur #menucontainer (bottom: 10%). Positionnement en
+   absolu/%: une marge en % se calcule sur la largeur du conteneur, pas sa hauteur,
+   d'où l'usage de `top`/`left`/`right` (relatifs à la hauteur de #title, qui est
+   positionné en absolu) plutôt que de `margin`. */
+#acme-welcome-title,
+#acme-welcome-subtitle {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+#acme-welcome-title {
+  top: 52%;
+  font-weight: normal;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: var(--acme-text);
+}
+
+#acme-welcome-subtitle {
+  top: 60%;
+  font-size: 1.1em;
+  color: var(--acme-text-muted);
+}
